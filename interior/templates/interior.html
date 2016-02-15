@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block universal %}
+
+
+         <h5>Щёлкните по одной из фотографий чтоб запустить просмотр слайдов.</h5>
+      <ul class="clearing-thumbs small-block-grid-3" data-clearing>
+         <li><a href="/static/media/uploads/{{vhod.img}}"><img data-caption="{{ vhod.title}}" src="/static/media/uploads/{{vhod.img_litle}}"></a></li>
+         <li><a href="/static/media/uploads/{{parikzal.img}}"><img data-caption="{{ parikzal.title}}" src="/static/media/uploads/{{parikzal.img_litle}}"></a></li>
+         <li><a href="/static/media/uploads/{{vnutri.img}}"><img data-caption="{{ vnutri.title}}" src="/static/media/uploads/{{vnutri.img_litle}}"></a></li>
+         <li><a href="/static/media/uploads/{{moyka.img}}"><img data-caption="{{ moyka.title}}" src="/static/media/uploads/{{moyka.img_litle}}"></a></li>
+         <li><a href="/static/media/uploads/{{manikur.img}}"><img data-caption="{{ manikur.title}}" src="/static/media/uploads/{{manikur.img_litle}}"></a></li>
+         <li><a href="/static/media/uploads/{{man_dr_vid.img}}"><img data-caption="{{ man_dr_vid.title}}" src="/static/media/uploads/{{man_dr_vid.img_litle}}"></a></li>
+         <li><a href="/static/media/uploads/{{massag.img}}"><img data-caption="{{ massag.title}}" src="/static/media/uploads/{{massag.img_litle}}"></a></li>
+      </ul>
+
+{% endblock %}
+
+       
