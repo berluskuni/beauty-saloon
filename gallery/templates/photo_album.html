@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% load thumbnail %}
+{% block content %}
+ 
+  {% for photo in photos %}
+  <div class="photo">
+         <!--
+    Превьюшки режем по центру размером 100 на 100
+    -->
+   
+    {% thumbnail photo.img  "200x200" crop='center' as im %}
+     <!--
+      Тут подключаем prettyPhoto
+      -->
+      
+      <a href="{{ MEDIA_URL }}{{ photo.img }}" rel="prettyPhoto[pp_gal]">
+      <img src='{{ im.url }}' alt="{{ photo.title }}" width="{{ im.width }}" height="{{ im.height }}">
+      </a>
+    {% endthumbnail %}
+   <p>{{ photo.title }}</p>
+    </div>
+  {% endfor %}
+  
+{% endblock %}
+{% block paginator %}
+          <ul class="pagination">
+              {% if photos.has_previous %}
+              <li class="arrow"><a href="/gallery/{{slug}}/{{ photos.previous_page_number }}/">&laquo;</a></li>
+              {% else %}
+              <li class="arrow unavailable"><a href="">&laquo;</a></li>
+              {% endif %}
+              {% for page in photos.paginator.page_range %}
+                  {% if page == photos.number %}
+                  <li class="current"><a href="{{ page }}">{{ page }}</a></li>
+                  {% else %}
+                  <li><a href="/gallery/{{slug}}/{{ page }}">{{ page }}</a></li>
+                  {% endif %}
+              {% endfor %}
+              {% if photos.has_next %}
+                  <li class="arrow"><a href="/gallery/{{slug}}/{{ photos.next_page_number }}/">&raquo;</a></li>
+              {% else %}
+                  <li class="arrow unavailable"><a href="">&raquo;</a></li>
+               {% endif %}
+          </ul>
+ {% endblock %}
+{% block photo_add %}
+ <a href="{% url 'gallery:photo_load' slug=slug %}">Добавить фотографию</a>
+ {% endblock %}
+ {% block photo_delete %}
+ <a href="{% url 'gallery:photo_delete' slug=slug pk=page_number %}">Удалить фотографию</a>
+ {% endblock %}
+ 
+

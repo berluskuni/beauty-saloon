@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+ {% block photoload %}
+ <form  method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+     {{ form.media }}
+     {{ form.as_p }}
+
+     <input class="button tiny" type="submit" value="Добавить фотографию"/>
+     </form>
+ {%  endblock %}
