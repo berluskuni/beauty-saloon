@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block universal %}
+
+  
+          {% for about_me in about_me %}
+          <h3>{{about_me.title}}</h3>
+          
+          {{about_me.about_me|safe}}
+          {% endfor %}
+                
+       
+      {% endblock %}
+   
