@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+ {% block addedit %}
+ <form  method="post">
+     {% csrf_token %}
+     {{ form.as_p }}
+
+     <input class="button tiny" type="submit" value="Добавить клиента"/>
+     </form>
+     
+{%  endblock %}
+{% block clients %}
+ <a href="{% url 'clients:clients_list' %}">Вернуться на страницу добавления и поиска клиента!</a>
+ {% endblock %}

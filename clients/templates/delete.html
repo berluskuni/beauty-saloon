@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+ {% block content %}
+    <h3>Клиент удалён из базы данных!</h3>
+    
+
+ {%  endblock %}
+ {% block clients %}
+ <a href="{% url 'clients:clients_list' %}">Вернуться на страницу добавления и поиска клиента!</a>
+ {% endblock %}

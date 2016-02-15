@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+ {% block content %}
+          <a href="{% url 'clients:clients_edit' pk=clients.pk %}">
+             <span class="glyphicon glyphicon-pencil"></span>&nbsp;Редактировать клиента&nbsp;</a><br>
+          <a href="{% url 'clients:clients_delete' pk=clients.pk %}">
+              <span class="glyphicon glyphicon-remove"></span>&nbsp;Удалить клиента&nbsp;</a><br>
+     <br>
+    
+    
+    <p>
+        Имя:&nbsp; &nbsp;{{clients.name}}<br>
+        Телефонный номер:&nbsp; &nbsp; {{clients.number}}<br>
+        Формула покраски:&nbsp; &nbsp;{{clients.formula}}<br>
+        
+    </p>
+   
+      
+ {%  endblock %}
+ 
+ {% block clients %}
+ <a href="{% url 'clients:clients_list' %}">Вернуться на страницу добавления и поиска клиента!</a>
+ {% endblock %}

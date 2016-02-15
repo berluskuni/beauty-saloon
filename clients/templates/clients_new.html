@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+ {% block contents %}
+
+     <h3>Редактировать базу данных могут только администраторы сайта</h3><br>
+     <a href="{% url 'login:login' %}">Войдите</a> &nbsp;или&nbsp; <a href="{% url 'login:register' %}"><strong>Зарегистрируйтесь</strong></a>
+ {%  endblock %}

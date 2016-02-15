@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+     <a href="{% url 'clients:clients_add' %}">
+         <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Добавить клиента!</a><br>
+    <a href="{% url 'clients:clients_search' %}">
+         <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Найти  клиента!</a><br>
+      
+      
+
+       
+ {%  endblock %}
