@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block contacts %}
+
+<h4>Адрес:&nbsp;Днепропетровск ул. Чкалова 4/12&nbsp;</h4>
+
+<form action="/contacts/" method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+	<div>
+	  <label for="id_subject">Тема:</label>
+	  {{ form.subject.errors }}
+	  {{ form.subject }}
+	</div>
+	<div>
+	  <label for="id_sender">E-mail:</label>
+	  {{ form.sender.errors }}
+	  {{ form.sender }}
+	</div>
+	<div>
+	  <label for="id_message">Сообщение:</label>
+	  {{ form.message.errors }}
+	  {{ form.message }}
+	</div>
+	<div>
+	  {{ form.copy.errors }}
+	  <label for="id_copy">Отправить копию себе {{ form.copy }}</label>
+	</div>
+	<input class="button tiny" type="submit" value="Отправить"/>
+</form>
+
+
+  {% endblock %}
+  
+  {% block cosialbutton %}
+  <h5>Вы можете связаться с нами через соц. сети!</h5>
+  <style> #social a:hover {background-color: transparent;opacity:0.7;}
+          #social img { -moz-transition: all 0.8s ease-in-out;
+                       -webkit-transition: all 0.8s ease-in-out;
+                       -o-transition: all 0.8s ease-in-out;
+                       -ms-transition: all 0.8s ease-in-out;
+                       transition: all 0.8s ease-in-out; }
+          #social img:hover { -moz-transform: rotate(360deg);
+                           -webkit-transform: rotate(360deg);
+                                -o-transform: rotate(360deg); 
+                               -ms-transform: rotate(360deg);
+                               transform: rotate(360deg); } </style> 
+<center>
+    <div id="social">
+<a href="https://www.facebook.com/profile.php?id=100002600317937" rel="nofollow" target="_blank" title="Добавляйтесь в Facebook">
+    <img alt="Icon" border="0" src="{% static "FB.png"%}" style="margin-right: 1px;" />
+    </a>   <a href="http://vk.com/ganzhela77" target="_blank" title="Добавляейтесь в Контакте"><img alt="Icon" border="0"
+    src="{% static "VK.png"%}" style="margin-right: 1px;" /></a>   <a href="http://ok.ru/profile/331765712348"
+    rel="nofollow" target="_blank" title="Мы воднокласниках"><img src="{% static "Odnoklasniki.png"%}" 
+    style="margin-right: 1px;" /></a>     
+    </div>  
+    </center>
+  
+  
+  {% endblock %}
+  {% block maps %}
+ <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Vdvmwt7R9yXVKdRSqIBQFlrv6QmO2Q34&width=320&height=378&lang=ru_UA&sourceType=constructor"></script>
+   {% endblock %}
+  
