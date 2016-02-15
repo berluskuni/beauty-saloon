@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+ {% block login %}
+     <div class="container">
+          <div class="row">
+           <div class="col-lg-4">
+               <form action="/auth/login/" class="form-signin" role="form" method="post">
+        {% csrf_token %}
+        <h3  align="center" class="form-signin-heading">Пожалуйста автороизуйтесь</h3>
+        <label for="username">Имя пользователя</label>
+        <input type="text" name="username" id="username" class="form-control" placeholder="Имя пользователя" required autofocus>
+        <label for="password">Пароль</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Пароль" required><br>
+      {% if login_error %}
+          <label class="errors">{{ login_error }}</label><br>
+      {% endif %}
+        <button class="btn btn-primary btn-lg" role="button" type="submit">Войти</button>
+
+      </form><br>
+     <a href="{% url 'login:register' %}"><button class="btn btn-primary btn-lg">Регистрация</button></a>
+           </div>
+
+          </div>
+</div>
+
+ {%  endblock %}
