@@ -1,0 +1,253 @@
+a {
+    text-decoration: none;
+}
+
+body {
+    background: url(/static/media/uploads/bg47.jpg);
+    background-position: top left;/* а это запрет прогручивания картинки фона */
+    background-repeat: repeat;
+    
+}
+
+.top-bar {
+    background: inherit;
+}
+.top-bar-section ul li {
+    background: inherit;
+}
+.top-bar-section li:not(.has-form) a:not(.button){
+    background: inherit;
+}
+/*
+.top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button){
+    background: inherit;
+}
+*/
+.top-bar-section ul li > a {
+    font-size: 14pt;
+}
+.alert-info a {
+    text-decoration: none;
+} 
+.alert-info a:hover {
+    color: #ff0000;
+}
+
+.btn-primary:hover {
+    color: #ff0000;
+}
+
+.container > form > input {
+    color: #b92c28;
+
+}
+
+.container .form-center {
+    color: #ff0000;
+}
+.container .row .col-md-10 a {
+    text-decoration: none;
+}
+.container .row .col-md-10 a:hover {
+    color: #cc1111;
+}
+
+.container  .row .col-md-10 > form > p > textarea {
+    width: 955px;
+
+}
+.row .large-10 .clearing-thumbs {
+    margin: 10px; 
+}
+.row .large-10 .clearing-thumbs  > li > a > img {
+    border: 4px double black; /* Параметры границы */
+}
+.row .large-10 > h3 {
+    font: italic 32px cursive;
+    color: #faebd7;
+    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+}
+
+.row .large-2 .side-nav > li > a  {
+    color:#faebd7;
+    font: italic 22px cursive;
+    text-decoration: none;
+}
+
+
+.row .large-2 .side-nav > li > a:hover {
+    color:#A52A2A;
+}
+
+.row {
+    max-width: 85%;
+}
+.row .large-4 .pagination {
+    margin: 50px;
+}
+.row .large-4 .pagination >li  >a{
+    color:#e6e6fa;
+
+}
+
+.row .large-5 .inline-list > li > a {
+    color:#faebd7;
+    font: italic 22px cursive;
+    text-decoration: none;
+    
+}
+.row .large-5 .inline-list > li > a:hover {
+    color:#A52A2A;
+}
+
+.row .large-10 > a {
+    font: italic 26px cursive;
+    color: #0C1BFF;
+    text-decoration: none;
+}
+
+.row .large-10 > a:hover {
+    color:#A52A2A;
+}
+.row .large-10 > p {
+    font: italic 22px cursive;
+    color: #faebd7;
+    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+}
+.row .large-10 > strong {
+    font: italic 26px cursive;
+    color: #faebd7;
+}
+.row .large-10 .large-5 > form > p > label {
+    font: italic 22px cursive;
+    color: #faebd7;
+}
+
+
+.row .large-10 .large-5 > form > p  {
+    font: italic 16px cursive;
+    color: #faebd7;
+}
+
+.row .large-10 .large-5 > form > p > textarea {
+    font: italic 16px cursive;
+    color: #000000;
+    height: 50px;
+}
+.row .large-10 .large-5 > form > p > select {
+    font: italic 16px cursive;
+    color: #000000;
+}
+
+.row .large-10 .large-5 > form > div > label {
+    font: italic 18px cursive;
+    color: #faebd7;
+    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+}
+.row .large-10 .large-5 .form-control {
+     height: 100px; /* Высота блока */
+
+}
+.row .large-10 .large-5 > h4 {
+    font: italic 18px cursive;
+    color: #faebd7;
+    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+}
+
+.row .large-10  > form > p > label {
+    font: italic 22px cursive;
+    color: #faebd7;
+}
+
+
+.row .large-10 > p > a {
+    font: italic 26px cursive;
+    color: #0C1BFF;
+    text-decoration: none;
+}
+
+.row .large-10 > p > span > span > a {
+    font: italic 26px cursive;
+    color: #0C1BFF;
+    text-decoration: none;
+}
+
+.row .large-10 > p > span > span > a:hover {
+    color:#A52A2A;
+}
+.row .large-10 > p > a:hover {
+    color:#A52A2A;
+}
+.row .large-10 > h5 > a {
+    font: italic 18px cursive;
+    color: #ffff00;
+    text-decoration: none;
+}
+
+.row .large-10 > h5 > a:hover {
+    color:#A52A2A;
+}
+
+.row .large-10 > h5 {
+    font: italic 18px cursive;
+    color:  #faebd7;
+    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+}
+.row .large-10 > strong {
+    font: italic 20px cursive;
+}
+
+.row .large-10 .album {
+     width: 200px;
+     height: 200px;
+     float: left;
+     margin: 30px;
+}
+.row .large-10 .album > a > img {
+    border: 8px double black; /* Параметры границы */
+}
+.row .large-10 .album > h5 {
+    font: italic 22px cursive;
+    color: #faebd7;
+}
+.row .large-10 .photo > p {
+    font: italic 20px cursive;
+    color: #ffff00;
+   
+}
+.row .large-10 .photo {
+     width: 200px;
+     height: 200px;
+     border: 4px double black; /* Параметры границы */
+     margin: 30px;
+     float: left;
+}
+.row .large-4  > a {
+    font: italic 24px cursive;
+    color: #faebd7;
+    text-decoration: none;
+}
+.row .large-4  > a:hover {
+    color:#A52A2A;
+}
+.row .large-4 > form > p > label {
+    font: italic 22px cursive;
+    color: #faebd7;
+}
+.row .large-10 .container .col-lg-4 > form > h3 {
+    font: italic 22px cursive;
+    color: #faebd7;
+}
+.row .large-10 .container .col-lg-4 > form >label {
+     font: italic 18px cursive;
+    color: #faebd7;
+}
+.row .large-5 > h5 {
+    font: italic 18px cursive;
+    color: #faebd7;
+    margin: 30px;
+}
+.row .large-4 > h5 {
+    font: italic 18px cursive;
+    color: #faebd7;
+}
