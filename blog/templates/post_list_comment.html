@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <p>
+    {{ post_views.author }}<br>
+    {{ post_views.post_title }}<br>
+    {{ post_views.post_text|safe }}<br>
+    {{ post_views.post_public_date }}<br>
+     </p>
+    <a href="{% url 'post:post_like' pk=post_views.pk %}">
+         <span class="glyphicon glyphicon-thumbs-up">
+             &nbsp;{{ post_views.post_like }}&nbsp;</span>&nbsp;Понравилось&nbsp;</a><br>
+{% endblock %}
+{% block comment %}
+    <div class="large-offset-1 large-8 columns">
+    <p>Коментарии:</p>
+    {% for comment in comments %}
+        <span class="glyphicon glyphicon-user">Коментарий оставил {{ username }}</span>
+        <p>{{ comment.comments_text }}</p>
+    {% endfor %}
+    </div>
+{% endblock %}

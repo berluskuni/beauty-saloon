@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+ {% block content %}
+     <h3>Автор:&nbsp;&nbsp;{{ post.author }}</h3><br>
+          <a href="{% url 'post:post_edit' pk=post.pk %}">
+             <span class="glyphicon glyphicon-pencil"></span>&nbsp;Редактировать статью&nbsp;</a><br>
+          <a href="{% url 'post:post_delete' pk=post.pk %}">
+              <span class="glyphicon glyphicon-remove"></span>&nbsp;Удалить статью&nbsp;</a><br>
+     {% if post.post_created_date %}
+         <h5>{{ post.post_created_date }}</h5>
+     {% endif %}
+     <h3>{{ post.post_title }}</h3><br>
+     <h5>{{ post.text_redactor|safe }}</h5><br>
+      <p><a href="{% url 'post:post_list' %}">//--Вернуться к списку статей--//</a></p>
+ {%  endblock %}

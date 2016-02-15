@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+ {% block content %}
+      {% if per %}
+     <a href="{% url 'post:post_new' %}">
+         <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Добавить запись</a><br>
+         {% endif %}
+    {% for post_list in post_list %}
+         <h3>Автор:&nbsp;&nbsp;{{ post_list.author }}</h3><br>
+       <h3>{{ post_list.post_title }}</h3>
+           {{ post_list.text_redactor|truncatewords:45|safe }}<a href="{% url 'post:post_detail' post_list.pk %}">&nbsp;---->>
+    Читать дальше</a><br>
+        {{ post_list.post_created_date }}</p><br><br>
+
+       <h5><span class="glyphicon glyphicon-thumbs-up">&nbsp;{{ post_list.post_like }}&nbsp;</span></h5><br>
+     {% endfor %}
+ {%  endblock %}

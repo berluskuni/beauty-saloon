@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+ {% block content %}
+    <h3>Статья успешно удалена!</h3>
+     <a href="{% url 'post:post_list' %}">//--Вернуться к списку статей--//</a>
+
+ {%  endblock %}

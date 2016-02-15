@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <h3>Автор:&nbsp;&nbsp;{{ post_views.author }}</h3><br>
+    <h3>{{ post_views.post_title }}</h3><br>
+    <h5>{{ post_views.text_redactor|safe }}<br>
+    {{ post_views.post_created_date }}</h5><br>
+    <a href="{% url 'post:post_like' pk=post_views.pk %}">
+         <span class="glyphicon glyphicon-thumbs-up">
+             &nbsp;{{ post_views.post_like }}&nbsp;</span>&nbsp;Понравилось&nbsp;</a><br>
+{% endblock %}
+{% block comment %}
+    <strong>Коментарии могут оставлять только авторизованные пользователи!</strong>
+    <p>Коментарии:</p>
+    {% for comment in comments %}
+        <p><span class="glyphicon glyphicon-user">&nbsp;Коментарий оставил: {{ username }}</span></p>
+        <h5>{{ comment.comments_text }}</h5>
+    {% endfor %}
+
+    {% if username %}
+    <form action="/post/{{ post_views.pk }}/add/" method="post">
+     {% csrf_token %}
+     {{ form.as_p }}<br>
+         <input type="submit"   class="container col-md-4 button " value="Добавить коментарий"/>
+     {% endif %}
+
+     </form><br><br>
+    <p><br>
+        <a href="{% url 'post:post_list' %}">//--Вернуться к списку статей--//</a></p>
+
+{% endblock %}
+
