@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{% static "css/normalize.css" %}">
     <link rel="stylesheet" href="{% static "css/my_style.css" %}">
     <link rel="stylesheet" href="{% static "css/prettyPhoto.css" %}">
+    <link rel="stylesheet" href="{% static "css/modal.css" %}" type="text/css">
     <link href="{% static "css/bootstrap-theme.min.css" %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static "css/social-likes_classic.css" %}">
     {% endcompress %}
@@ -70,9 +71,9 @@
              {% if username %}
             <li><a href="/auth/logout/">Выйти({{ username }})</a></li>
             {% else %}
-            <li><a href="/auth/login/">Войти</a></li>
+            <li><a href="#login_form" id="login_pop">Войти</a></li>
             {% endif %}
-            <li><a href="/auth/register/">Зарегистрироваться</a></li>
+            <li><a href="#join_form" id="join_pop">Зарегистрироваться</a></li>
         </ul>
       </li>
     </ul>
@@ -148,6 +149,55 @@
              {% block cosialbutton %}{% endblock %}
              </div>
     </div>
+    <!-- popup form #1 -->
+        		<a href="#x" class="overlay" id="login_form"></a>
+        		<div class="popup">
+        		    <form action="/auth/login/" role="form" method="post">
+                    {% csrf_token %}
+            		<h2>Добро пожаловать!</h2>
+            		<p>Введите имя пользователя и пароль</p>
+            		<div>
+                		<label for="login">Логин</label>
+                		<input type="text" id="login" name="username" required/>
+            		</div>
+            		<div>
+                	<label for="password">Пароль</label>
+                	<input type="password" id="password" value="" name="password" required/>
+            		</div>
+            		<input type="checkbox" name="remember">Запомнить меня <br>
+            		<input type="submit" value="Войти"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#restore_form" id="restore_pop">Забыли пароль?</a>
+            		<a class="close" href="#close"></a>
+            		   {% if login_error %}
+                            <label class="errors">{{ login_error }}</label><br>
+                       {% endif %}
+                    </form>
+        		</div>
+        		 <!-- popup form #2 -->
+        		<a href="#x" class="overlay" id="join_form"></a>
+        		<div class="popup">
+        		    <form action="/auth/register/" role="form" method="post">
+                    {% csrf_token %}
+            		<h2>Регистрация</h2>
+            		<p>Введите свои данные</p>
+            		<div>	
+                		<label for="email">Логин (Email)</label>
+                		<input type="text" id="email" name="username" value="" required />
+            		</div>	
+            		<div>
+                		<label for="id_password1">Пароль</label>
+                		<input type="password" id="id_password1" name="password1" value="" required/>
+            		</div>
+            		<div>
+                		<label for="id_password2">Подтвердите пароль</label>
+                		<input type="password" id="id_password2" name="password2" value="" required/>
+            		</div>
+            		<input type="submit" value="Регистрация" />&nbsp;&nbsp;&nbsp;или&nbsp;&nbsp;&nbsp;<a href="#login_form" id="login_pop">Войти</a>
+            		<a class="close" href="#close"></a>
+        		</div>
+        		</form>
+	
+	
+
       
 
 {% block script %}{% endblock %}
