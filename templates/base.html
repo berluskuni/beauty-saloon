@@ -38,14 +38,6 @@
     
    
     
-    <!--
-    <script>
-        $(function()
-        {
-            alert('Подключена последняя версия jQuery через Google хостинг');
-        });
-        </script>
-        -->
     
 </head>
 <body>
@@ -152,7 +144,7 @@
     <!-- popup form #1 -->
         		<a href="#x" class="overlay" id="login_form"></a>
         		<div class="popup">
-        		    <form action="/auth/login/" role="form" method="post">
+        		    <form id="login" role="form" method="post">
                     {% csrf_token %}
             		<h2>Добро пожаловать!</h2>
             		<p>Введите имя пользователя и пароль</p>
@@ -175,7 +167,7 @@
         		 <!-- popup form #2 -->
         		<a href="#x" class="overlay" id="join_form"></a>
         		<div class="popup">
-        		    <form action="/auth/register/" role="form" method="post">
+        		    <form id="register" role="form" method="post">
                     {% csrf_token %}
             		<h2>Регистрация</h2>
             		<p>Введите свои данные</p>
@@ -201,26 +193,18 @@
       
 
 {% block script %}{% endblock %}
-<!--Настройки foundation -->  
     {% compress js %}
     <script src="{% static "js/vendor/jquery.js" %}"></script>
     <script src="{% static "js/foundation.min.js" %}"></script>
     <script src="{% static "js/foundation/foundation.js" %}"></script>
     <script src="{% static "js/foundation/foundation.topbar.js" %}"></script>
     <script src="{% static "js/foundation/foundation.clearing.js" %}"></script>
+    <script src="{% static "js/common.js" %}"></script>
     {% endcompress %}
     <script>
       $(document).foundation();
     </script>
-    <!--End Настройки foundation -->  
     
-<!--
 
- <script type="text/javascript" charset="utf-8">
-  $(document).ready(function(){
-    $("a[rel^='prettyPhoto']").prettyPhoto();
-  });
-</script>
--->
 </body>
 </html>
