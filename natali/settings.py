@@ -161,8 +161,7 @@ STATICFILES_DIRS = (
    os.path.join(PROJECT_ROOT, 'assets') ,
    os.path.join(PROJECT_ROOT, 'foundation'),
    os.path.join(PROJECT_ROOT, 'bootstrap'),
-   os.path.join(PROJECT_ROOT, 'prettyPhoto'),
-)
+ )
 
 
 MEDIA_ROOT = os.path.join(os.path.expanduser('~'), 'domains/firstexperience.ru/static/media/uploads/')
