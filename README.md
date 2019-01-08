@@ -1,5 +1,5 @@
 # beauty-saloon
-Салон красоты Натальи Ганжела
+Салон красоты
 
 http://firstexperience.ru/
 
